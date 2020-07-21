@@ -96,7 +96,7 @@ Linkedlist.prototype.deleteList = function () {
   }
 };
 
-// prints the length of the Linked List
+// Prints the length of the Linked List
 Linkedlist.prototype.length = function () {
   let count = 0;
   let temp = this.head;
@@ -109,6 +109,24 @@ Linkedlist.prototype.length = function () {
   console.log("Length is: ", count);
 };
 
+// Reverses Linked List
+Linkedlist.prototype.reverse = function () {
+  let currentNode;
+  let previousNode;
+  let nextNode;
+
+  currentNode = this.head;
+  previousNode = null;
+  while (currentNode) {
+    nextNode = currentNode.next;
+    currentNode.next = previousNode;
+
+    previousNode = currentNode;
+    currentNode = nextNode;
+  }
+  this.head = previousNode;
+};
+
 const ll = new Linkedlist();
 ll.push("12");
 ll.append("13");
@@ -118,5 +136,7 @@ ll.insertAt("11.5", "11");
 ll.delete("11.5");
 ll.print();
 ll.length();
+ll.reverse();
+ll.print();
 ll.deleteList();
 ll.print();
