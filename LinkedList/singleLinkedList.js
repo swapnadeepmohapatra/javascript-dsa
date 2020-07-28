@@ -1,12 +1,12 @@
 "use strict";
 
-function Node(value, next) {
+function Node(value) {
   this.value = value;
-  this.next = next;
+  this.next = null;
 }
 
-function Linkedlist(head) {
-  this.head = head;
+function Linkedlist() {
+  this.head = null;
 }
 
 // Adds to the end
